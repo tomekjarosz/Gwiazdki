@@ -1,21 +1,24 @@
 package data;
 
+import java.util.ArrayList;
+
 import data.Entry;
 
 public class EntryStorage{
 
     public static final int MAX_ENTRIES = 100;
-    private Entry[] entryTab = new Entry[MAX_ENTRIES];
+    //private Entry[] entryTab = new Entry[MAX_ENTRIES];
+    private ArrayList<Entry> entryTab = new ArrayList<>();
 
-    public Entry[] getEntryTab(){   //zwykły getter
+    public ArrayList<Entry> getEntryTab(){   //zwykły getter
         return entryTab;    //odwołujemy się to elementu tablicy entry przez getEntryTab[i]. a nie entryTab... kosmetyka
     }
 
-    public void add(Entry entry, int index){   //wiem, to taki backdoor trochę...
-        entryTab[index] = entry;
+    public void add(Entry entry){   //wiem, to taki backdoor trochę...
+        entryTab.add(entry);
     }
 
     public int getLength(){
-        return entryTab.length;
+        return entryTab.size();
     }
 }

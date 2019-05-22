@@ -34,7 +34,7 @@ public class StorageApp {
                 break;
         }
 
-        Printer.display("liczba wpisów w tej chwili: " + entryManager.entryCount);
+        Printer.display("liczba wpisów w tej chwili: " + entryManager.entryStorageProper.getEntryTab().size());
 
         MainOption mainOption;
 
@@ -46,6 +46,10 @@ public class StorageApp {
 
                 case ADD_ENTRY:
                     insertNewEntry();
+                    break;
+
+                case REMOVE_ENTRY:
+                    removeEntry();
                     break;
 
                 case DISPLAY_ENTRIES:
@@ -115,11 +119,19 @@ public class StorageApp {
 
     private void insertNewEntry() {
         entryManager.addEntry(Reader.readNewEntry());
-        Printer.display("dodano nowy wpis \n");
+        Printer.display("dodano nowy wpis");
+    }
+
+    private void removeEntry(){
+        Printer.display("podaj numer wpisu do skasowania:");
+        entryManager.displayEntries();
+        int index = Reader.sc.nextInt();
+        entryManager.removeSpecifiedEntry(index);
+        Reader.sc.nextLine();
     }
 
     private void exit() {
-        Printer.display("zapisano dane, koniec programu");
+        Printer.display("zapisano dane, koniec programu!");
         Reader.sc.close();
     }
 }

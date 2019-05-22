@@ -18,12 +18,12 @@ public class FileManager {
                 FileWriter fileWriter = new FileWriter(FILE_NAME);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)
                 ){
-            for (int i=0; i<entryStorageForExport.getLength(); i++) {
-                if (entryStorageForExport.getEntryTab()[i] != null) {
-                    bufferedWriter.write(entryStorageForExport.getEntryTab()[i].convertToCsv());
-                    bufferedWriter.newLine();
-                }
+
+            for (Entry x:entryStorageForExport.getEntryTab()){
+                bufferedWriter.write(x.convertToCsv());
+                bufferedWriter.newLine();
             }
+
             } catch (IOException e){
                 throw new DataExportException("błąd zapisu do pliku "+FILE_NAME);
         }
@@ -36,12 +36,10 @@ public class FileManager {
             try(
                     Scanner fileReader = new Scanner(new File(FILE_NAME))
             ){
-                int i=0;
                 while (fileReader.hasNextLine()){
                     String line = fileReader.nextLine();
                     Entry importedEntry = createEntryFromString(line);
-                    entryStorage.add(importedEntry, i);
-                    i++;
+                    entryStorage.add(importedEntry);
                 }
             } catch (FileNotFoundException e){
                 throw new DataImportException("brak pliku "+FILE_NAME);

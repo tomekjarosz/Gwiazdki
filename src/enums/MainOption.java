@@ -4,8 +4,9 @@ public enum MainOption{
 
     EXIT(0,"zapisanie danych i wyjście z programu"),
     ADD_ENTRY(1, "dodanie nowego wpisu"),
-    DISPLAY_ENTRIES(2, "wyświetlenie wszystkich wpisów"),
-    COUNT_STARS(3,"policzenie i wyświetlenie ilości gwiazdek");
+    REMOVE_ENTRY(2,"usuń wybrany wpis"),
+    DISPLAY_ENTRIES(3, "wyświetlenie wszystkich wpisów"),
+    COUNT_STARS(4,"policzenie i wyświetlenie ilości gwiazdek");
 
     private int value;
     private String description;
