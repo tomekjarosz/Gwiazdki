@@ -6,7 +6,7 @@ public class Info {
 
     public static void welcome() {
         Printer.display(
-                "Witaj w programie <<Gwiazdki v0.8>> :-) \n" +
+                "Witaj w programie <<Gwiazdki v1.0>> :-) \n" +
                       "\n" +
                       "Celem programu jest umożliwienie ewidencji gwiazdek przyznawanych dzieciom za dobre zachowanie, \n" +
                       "jak również ewidencja ich odbierania (kara/odbiór nagrody).\n"  +
