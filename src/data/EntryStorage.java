@@ -7,7 +7,7 @@ import data.Entry;
 public class EntryStorage{
 
     public static final int MAX_ENTRIES = 100;
-    //private Entry[] entryTab = new Entry[MAX_ENTRIES];
+
     private ArrayList<Entry> entryTab = new ArrayList<>();
 
     public ArrayList<Entry> getEntryTab(){   //zwykły getter

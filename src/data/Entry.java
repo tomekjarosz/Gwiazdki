@@ -1,24 +1,26 @@
 package data;
 
+import java.time.LocalDate;
+
 public class Entry{
 
     private static final long serialVersionUID = 3812017177088226528L;
 
-    private String date;
+    private LocalDate date;
     private String title;
     private int value;
 
-    public Entry(String date, String title, int value) {
+    public Entry(LocalDate date, String title, int value) {
         this.date = date;
         this.title = title;
         this.value = value;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -30,11 +32,11 @@ public class Entry{
         this.title = title;
     }
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    void setValue(int value) {
         this.value = value;
     }
 

@@ -4,8 +4,10 @@ import data.Entry;
 import data.EntryStorage;
 import exceptions.DataExportException;
 import exceptions.DataImportException;
+import java.time.LocalDate;
 
 import java.io.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class FileManager {
@@ -51,9 +53,14 @@ public class FileManager {
 
         String[] split = csvLine.split(";");
 
-        String readDate = split[0];
+        String date = split[0];
         String readTitle = split[1];
         int readValue = Integer.valueOf(split[2]);
+
+        LocalDate readDate;
+        DateTimeFormatter dateImportPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        readDate = LocalDate.parse(date, dateImportPattern);
 
         return new Entry (readDate, readTitle, readValue);
     }
